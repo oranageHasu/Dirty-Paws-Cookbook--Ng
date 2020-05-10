@@ -1,5 +1,8 @@
 import { Component, ChangeDetectorRef, OnInit, OnDestroy } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
+import { LoginService } from '../../services/login-service';
+import { Router } from '@angular/router';
+import { ROUTE_LOGIN } from '../../classes/ui-constants';
 
 @Component({
   selector: 'app-navbar',
@@ -14,7 +17,12 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor(
+    public changeDetectorRef: ChangeDetectorRef,
+    public media: MediaMatcher,
+    private api: LoginService,
+    private router: Router
+  ) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -26,6 +34,19 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
+  }
+
+  public async SignOut() {
+
+    let opResult = false;
+
+    opResult = await this.api.Logout(true);
+
+    if (opResult) {
+      // Send the user to the User login
+      this.router.navigate([`/${ROUTE_LOGIN}`]);
+    }
+
   }
 
 }

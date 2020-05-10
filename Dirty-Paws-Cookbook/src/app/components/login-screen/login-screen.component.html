@@ -13,14 +13,14 @@
         <input matInput
                type="text"
                [(ngModel)]="username"
-               class="input-font">
+               class="input-font"
+               (keyup.enter)="FocusPassword()">
         <button mat-button
                 *ngIf="username"
                 matSuffix
                 mat-icon-button
                 aria-label="Clear"
-                (click)="username=''"
-                (keyup.enter)="FocusPassword()">
+                (click)="username=''">
           <mat-icon>close</mat-icon>
         </button>
       </mat-form-field>
@@ -29,16 +29,17 @@
       <mat-form-field class="input-field">
         <mat-label>Password</mat-label>
         <input matInput
+               #passwordField
                type="password"
                [(ngModel)]="password"
-               class="input-font">
+               class="input-font"
+               (keyup.enter)="AuthenticateLogin()">
         <button mat-button
                 *ngIf="password"
                 matSuffix
                 mat-icon-button
                 aria-label="Clear"
-                (click)="username=''"
-                (keyup.enter)="AuthenticateLogin()">
+                (click)="username=''">
           <mat-icon>close</mat-icon>
         </button>
       </mat-form-field>

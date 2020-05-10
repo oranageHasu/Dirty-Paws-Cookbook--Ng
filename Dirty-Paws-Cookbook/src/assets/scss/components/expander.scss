@@ -1,0 +1,41 @@
+.container-expander {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 25px;
+  overflow-y: auto;
+  height: 100%;
+  max-height: 1000px;
+}
+
+// Expansion Header background/text color (mouse hover)
+.mat-expansion-panel-header:hover {
+  background-color: $hover !important;
+  color: $main-white !important;
+}
+
+.mat-expansion-panel-header:hover mat-panel-title {
+  background-color: $hover !important;
+  color: $main-white !important;
+}
+
+// Expansion Header background/text color (i.e. "expanded" item)
+.mat-expansion-panel-header.mat-expanded {
+  background-color: $primary-app-color !important;
+  color: $main-white !important;
+}
+
+.mat-expansion-panel-header.mat-expanded mat-panel-title {
+  background-color: $primary-app-color !important;
+  color: $main-white !important;
+}
+
+// Expansion Arrow color
+// HACK:  ng-deep shouldn't be used, but I haven't found an alternative.  Out of scope.
+::ng-deep .mat-expansion-panel-header.mat-expanded > .mat-expansion-indicator:after {
+  color: $main-white;
+}
+
+::ng-deep .mat-expansion-panel-header:hover > .mat-expansion-indicator:after {
+  color: $main-white;
+}

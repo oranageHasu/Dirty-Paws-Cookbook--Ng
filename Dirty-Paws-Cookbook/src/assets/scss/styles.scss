@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+
+// SCSS Imports
+@import "colors.scss";
+@import "fonts.scss";
+@import "components.scss";
+
+/* Allows full screen vertical height by default */
+html {
+  height: 100%;
+}
+
+/* sets base screen */
+.fullscreen {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+
+.error {
+  color: #ff6666;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

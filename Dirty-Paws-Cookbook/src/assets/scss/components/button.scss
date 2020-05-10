@@ -1,0 +1,43 @@
+.button {
+  background-color: $primary-app-color;
+  color: $text-white;
+  height: 45px;
+  min-width: 80px;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 5px;
+  border-radius: 5px;
+  border: 0px;
+  font-family: $button-font;
+  font-size: $button-font-size;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: $hover;
+  color: white;
+}
+
+.button-selected {
+  background-color: $primary-app-color;
+  color: white;
+}
+
+.icon-button {
+  @extend .button;
+  text-align: center;
+  padding: 12px;
+  min-width: 42px;
+  width: 42px;
+  height: 42px;
+  float: right;
+}
+
+.icon-dropdown-button {
+  @extend .button;
+  text-align: center;
+  padding: 12px;
+  width: 70px;
+  float: right;
+}

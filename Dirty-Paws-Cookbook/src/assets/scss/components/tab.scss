@@ -1,0 +1,40 @@
+.mat-tab-label {
+  min-width: 25px !important;
+  background-color: $primary-app-color;
+  color: white;
+  font-weight: 700;
+}
+
+.mat-tab-header {
+  background-color: $primary-app-color;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+// Allow the Tab Body to grow
+.mat-tab-body-wrapper {
+  height: 100%;
+}
+
+/* Styles for the active tab label */
+.mat-tab-label-active {
+  min-width: 25px !important;
+  background-color: $primary-app-color;
+  color: white;
+  font-weight: bold;
+}
+
+// Note: This is a "hack"
+// Material Components apparent don't differentiate between "active" and "focused" correctly
+// See: https://github.com/angular/components/issues/5903
+// ng-deep is deprecated, although supported by most browsers (for now)
+::ng-deep.mat-tab-label.mat-tab-label-active {
+  opacity: 1;
+}
+
+/* Styles for the ink bar */
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: white;
+}

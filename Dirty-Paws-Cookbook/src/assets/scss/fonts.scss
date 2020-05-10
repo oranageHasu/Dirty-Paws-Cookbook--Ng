@@ -1,0 +1,44 @@
+// Fonts:
+$header-font: Tahoma;
+$subheader-font: Tahoma;
+$standard-font: Tahoma;
+$input-field-font: Tahoma;
+$label-field-font: Tahoma;
+$grid-header-font: Rockwell;
+$button-font: Tahoma;
+
+// Font Sizes
+$header-font-size: 30px;
+$subheader-font-size: 20px;
+$input-field-font-size: 15px;
+$label-field-font-size: 15px;
+$button-font-size: 20px;
+
+
+.label-font {
+  font-family: $input-field-font;
+  font-size: $input-field-font-size;
+  color: $field-name-text;
+  font-weight: bold;
+}
+
+.header-font {
+  font-family: $header-font;
+  font-size: $header-font-size;
+  color: $header-font-color;
+  font-weight: bold;
+}
+
+.sub-header-font {
+  font-family: $header-font;
+  font-size: $subheader-font-size;
+  color: $header-font-color;
+  font-weight: bold;
+}
+
+.input-font {
+  font-family: $input-field-font;
+  font-size: $input-field-font-size;
+  color: $field-name-text;
+  font-weight: bold;
+}

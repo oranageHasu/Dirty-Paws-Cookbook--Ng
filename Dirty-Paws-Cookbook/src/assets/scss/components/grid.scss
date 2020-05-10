@@ -1,0 +1,42 @@
+// Grids Rows
+tbody tr:nth-child(odd) td {
+  background-color: $primary-app-color-light;
+}
+
+tbody tr:nth-child(even) td {
+  background-color: white;
+}
+
+// Grid Header
+thead tr th {
+  background-color: $primary-app-color;
+  color: $header-text-color;
+  font-family: $grid-header-font;
+}
+
+// Grid Container
+.grid-container {
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+}
+
+// Grid
+.grid {
+  border-collapse: separate !important;
+  border-spacing: 0px;
+  width: 100%;
+  background-color: white;
+}
+
+// Keeps the header row at the top for scrollable grids
+.grid thead tr th {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
+// Grid header row height
+.grid thead {
+  height: 60px;
+}

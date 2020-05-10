@@ -1,0 +1,48 @@
+<div class="navigation-container" [class.is-mobile]="mobileQuery.matches">
+
+  <!-- Top Nav Bar -->
+  <mat-toolbar color="primary" class="toolbar">
+    <mat-toolbar-row>
+
+      <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+
+      <!-- Nav Title -->
+      <span class="app-name">Dirty Paws Cookbook</span>
+
+      <!-- Nav Content -->
+      <div class="fill-remaining-space">
+
+      </div>
+
+      <!-- Nav Right-side Buttons-->
+      <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">verified_user</mat-icon>
+
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <!-- Side Nav Bar -->
+  <mat-sidenav-container class="sidenav-container"
+                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+
+    <mat-sidenav #sidenav
+                 [mode]="mobileQuery.matches ? 'over' : 'side'"
+                 [fixedInViewport]="mobileQuery.matches"
+                 fixedTopGap="56">
+
+      <mat-nav-list>
+
+        <!-- Some seeded display data for now... -->
+        <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a>
+      </mat-nav-list>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content class="sidenav-content-container">
+
+      <!-- This is our nested child routes for internal app screens -->
+      <router-outlet></router-outlet>
+
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+</div>

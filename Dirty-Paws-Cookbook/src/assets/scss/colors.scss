@@ -1,0 +1,31 @@
+$main-white: white;
+$main-black: black;
+
+$primary-app-color: #ff3333;
+$primary-app-color-light: lighten(#ff3333, 30%);;
+$hover: #cc0000;
+
+$border-gray: lighten(gray, 40%);
+
+$darkmode-main-screen-color: lighten(black, 30%);
+$lightmode-main-screen-color: darken(white, 10%);
+
+// Screen Shades
+$main-black-shade-dark: lighten($main-black, 15%);
+$main-black-shade-light: lighten($main-black, 20%);
+
+// Font Colors:
+$text-white: darken(white, 7%);
+
+$input-text: $text-white;
+$input-text-focused: $text-white;
+$field-name-text: $text-white;
+$header-font-color: $text-white;
+
+// Grid Colors
+$header-text-color: $text-white;
+
+
+.primary-app-background-color {
+  background-color: $primary-app-color;
+}

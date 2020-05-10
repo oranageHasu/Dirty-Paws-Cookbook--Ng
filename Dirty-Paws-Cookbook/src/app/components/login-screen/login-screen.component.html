@@ -1,0 +1,68 @@
+<div class="login-container">
+
+  <div class="background-panel login-content-container">
+
+    <label class="header-font">Welcome to Dirty Paws Cookbook</label>
+    <label class="sub-header-font">Please Sign in</label>
+
+    <div class="login-input-container">
+
+      <!-- Username -->
+      <mat-form-field class="input-field">
+        <mat-label>Username</mat-label>
+        <input matInput
+               type="text"
+               [(ngModel)]="username"
+               class="input-font">
+        <button mat-button
+                *ngIf="username"
+                matSuffix
+                mat-icon-button
+                aria-label="Clear"
+                (click)="username=''"
+                (keyup.enter)="FocusPassword()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <!-- Password -->
+      <mat-form-field class="input-field">
+        <mat-label>Password</mat-label>
+        <input matInput
+               type="password"
+               [(ngModel)]="password"
+               class="input-font">
+        <button mat-button
+                *ngIf="password"
+                matSuffix
+                mat-icon-button
+                aria-label="Clear"
+                (click)="username=''"
+                (keyup.enter)="AuthenticateLogin()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <!-- Sign in button -->
+      <button mat-button
+              [disabled]="!password || !username"
+              class="button"
+              type="submit"
+              (click)="AuthenticateLogin()">
+        Sign in
+      </button>
+
+    </div>
+
+    <div>
+
+      <label *ngIf="errorMessageVisible"
+             class="error">
+        Username or Password is incorrect
+      </label>
+
+    </div>
+
+  </div>
+
+</div>

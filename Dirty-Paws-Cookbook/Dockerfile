@@ -36,11 +36,11 @@ EXPOSE 80
 # Copy the ES5 build result of Dirty Paws Cookbook to Nginx
 COPY --from=build-stage /app/dist/Dirty-Paws-Cookbook /usr/share/nginx/html
 
-# Copy the nginx.conf provided within the Dominic project itself
+# Copy the nginx.conf provided within the Dirty Paws Cookbook project itself
 COPY --from=build-stage /app/nginx.conf /etc/nginx/conf.d/default.conf
 
-# Copy the SSL Certificate provided within the Dominic project itself
+# Copy the SSL Certificate provided within the Dirty Paws Cookbook project itself
 COPY --from=build-stage /app/localhost.crt /etc/nginx/ssl/localhost.crt
 
-# Copy the SSL Key provided within the Dominic project itself
+# Copy the SSL Key provided within the Dirty Paws Cookbook project itself
 COPY --from=build-stage /app/localhost.key /etc/nginx/ssl/localhost.key

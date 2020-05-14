@@ -1,9 +1,9 @@
 $main-white: white;
 $main-black: black;
 
-$primary-app-color: #ff3333;
-$primary-app-color-light: lighten(#ff3333, 30%);;
-$hover: #cc0000;
+$primary-app-color: #cc0000;
+$primary-app-color-light: lighten($primary-app-color, 30%);
+$hover: #ff3333;
 
 $border-gray: lighten(gray, 40%);
 

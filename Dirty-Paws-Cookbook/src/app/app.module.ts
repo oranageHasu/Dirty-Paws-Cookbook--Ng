@@ -3,9 +3,10 @@ import { NgModule } from '@angular/core';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AuthGuard } from './auth-guard';
-import { DityPawsHttpInterceptor } from './http-interceptor';
+import { DirtyPawsHttpInterceptor } from './http-interceptor';
 
 // Customizable UI Loader
 import { NgxUiLoaderModule, NgxUiLoaderConfig, SPINNER, POSITION, PB_DIRECTION } from 'ngx-ui-loader';
@@ -20,14 +21,17 @@ import { MatListModule } from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 
+// Routing
 import { AppRoutingModule } from './app-routing.module';
+
+// Main App Component
 import { AppComponent } from './app.component';
 
 // Screens and Components below
 import { LoginScreenComponent } from './components/login-screen/login-screen.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { HomeScreenComponent } from './components/home-screen/home-screen.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RecipeManagerComponent } from './components/recipe system/recipe-manager/recipe-manager.component';
+import { RecipeComponent } from './components/recipe system/recipe/recipe.component';
 
 // Custom configuration for the Ngx UI Loader
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
@@ -54,7 +58,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     AppComponent,
     LoginScreenComponent,
     NavbarComponent,
-    HomeScreenComponent
+    RecipeManagerComponent,
+    RecipeComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +81,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: DityPawsHttpInterceptor,
+      useClass: DirtyPawsHttpInterceptor,
       multi: true
     },
     AuthGuard

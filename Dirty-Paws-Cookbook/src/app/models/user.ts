@@ -3,5 +3,5 @@ export class User {
   userName: string;
   password: string;
   newPassword: string;
-  ExceededAttempts : boolean;
+  ExceededAttempts: boolean;
 }

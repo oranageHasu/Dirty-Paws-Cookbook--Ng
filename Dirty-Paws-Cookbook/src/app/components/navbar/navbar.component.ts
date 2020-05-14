@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   fillerNav = Array.from({ length: 3 }, (_, i) => `Nav Item ${i + 1}`);
 
-  private _mobileQueryListener: () => void;
+  private mobileQueryListener: () => void;
 
   constructor(
     public changeDetectorRef: ChangeDetectorRef,
@@ -24,8 +24,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
     private router: Router
   ) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
-    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
-    this.mobileQuery.addListener(this._mobileQueryListener);
+    this.mobileQueryListener = () => changeDetectorRef.detectChanges();
+    this.mobileQuery.addListener(this.mobileQueryListener);
   }
 
   ngOnInit() {
@@ -33,7 +33,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.mobileQuery.removeListener(this._mobileQueryListener);
+    this.mobileQuery.removeListener(this.mobileQueryListener);
   }
 
   public async SignOut() {

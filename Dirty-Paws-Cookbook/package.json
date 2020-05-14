@@ -1,10 +1,11 @@
 {
   "name": "dirty-paws-cookbook",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "npm run lint && ng serve",
+    "build": "npm run lint && ng build",
+    "build:production": "npm run lint && ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -22,10 +23,10 @@
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
     "hammerjs": "^2.0.8",
+    "ngx-ui-loader": "8.0.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
-    "zone.js": "~0.9.1",
-    "ngx-ui-loader": "8.0.0"
+    "zone.js": "~0.9.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.24",

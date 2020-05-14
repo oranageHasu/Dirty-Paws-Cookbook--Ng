@@ -27,7 +27,7 @@
 }
 
 // Note: This is a "hack"
-// Material Components apparent don't differentiate between "active" and "focused" correctly
+// Material Components apparently don't differentiate between "active" and "focused" correctly
 // See: https://github.com/angular/components/issues/5903
 // ng-deep is deprecated, although supported by most browsers (for now)
 ::ng-deep.mat-tab-label.mat-tab-label-active {

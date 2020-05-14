@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import retry from 'p-retry';
-import { User } from '../models/User';
+import { User } from '../models/user';
 import { LOGIN_RETRY } from '../classes/api-constants';
 import { KEY_USERNAME } from '../classes/ui-constants';
 

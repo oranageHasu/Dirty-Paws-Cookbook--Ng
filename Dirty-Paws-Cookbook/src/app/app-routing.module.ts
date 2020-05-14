@@ -3,13 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './auth-guard';
 import { LoginScreenComponent } from './components/login-screen/login-screen.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { HomeScreenComponent } from './components/home-screen/home-screen.component';
+import { RecipeManagerComponent } from './components/recipe system/recipe-manager/recipe-manager.component';
+import { RecipeComponent } from './components/recipe system/recipe/recipe.component';
 
 import {
   MAIN_APP_ROUTE,
-  ROUTE_HOME,
+  ROUTE_RECIPES,
+  ROUTE_RECIPE,
   ROUTE_LOGIN
 } from './classes/ui-constants';
+
 
 const routes: Routes = [
 
@@ -19,7 +22,8 @@ const routes: Routes = [
   {
     path: MAIN_APP_ROUTE, component: NavbarComponent, canActivate: [AuthGuard],
     children: [
-      { path: ROUTE_HOME, component: HomeScreenComponent, canActivate: [AuthGuard] },
+      { path: ROUTE_RECIPES, component: RecipeManagerComponent, canActivate: [AuthGuard] },
+      { path: ROUTE_RECIPE, component: RecipeComponent, canActivate: [AuthGuard] },
     ]
   }
 

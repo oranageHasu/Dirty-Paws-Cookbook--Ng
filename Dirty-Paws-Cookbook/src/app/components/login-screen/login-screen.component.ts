@@ -2,8 +2,8 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { LoginService } from '../../services/login-service';
 import { Router } from '@angular/router';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
-import { User } from '../../models/User';
-import { ROUTE_SLASH, ROUTE_HOME, MAIN_APP_ROUTE } from '../../classes/ui-constants';
+import { User } from '../../models/user';
+import { ROUTE_SLASH, ROUTE_RECIPES, MAIN_APP_ROUTE } from '../../classes/ui-constants';
 
 @Component({
   selector: 'app-login-screen',
@@ -49,7 +49,7 @@ export class LoginScreenComponent implements OnInit {
         await this.api.CacheUserData(user.userName);
 
         // Send the user to the Home screen of the app
-        this.router.navigate([`/${MAIN_APP_ROUTE + ROUTE_SLASH + ROUTE_HOME}`]);
+        this.router.navigate([`/${MAIN_APP_ROUTE + ROUTE_SLASH + ROUTE_RECIPES}`]);
 
       } else if (user.ExceededAttempts) {
 

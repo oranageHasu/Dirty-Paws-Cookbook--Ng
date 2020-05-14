@@ -15,7 +15,7 @@ import { LoginService } from './services/login-service';
 import { ROUTE_LOGIN } from './classes/ui-constants';
 
 @Injectable()
-export class DityPawsHttpInterceptor implements HttpInterceptor {
+export class DirtyPawsHttpInterceptor implements HttpInterceptor {
 
   constructor(
     private router: Router,

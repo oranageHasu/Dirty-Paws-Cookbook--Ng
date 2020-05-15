@@ -1,1 +1,16 @@
-<p>recipe-manager works!</p>
+<div class="container-main">
+
+  <!-- Recipe Card Container  -->
+  <div class="container-recipes">
+
+    <div class="" *ngIf="recipes != null">
+
+      <app-recipe-card *ngFor="let recipe of recipes"
+                       [(recipe)]="recipe"
+                       (recipeSelected)="RecipeSelected(recipe)">
+      </app-recipe-card>
+
+    </div>
+  </div>
+
+</div>

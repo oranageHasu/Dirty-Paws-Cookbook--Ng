@@ -1,0 +1,21 @@
+<div class="card z-depth-1 fade-in"
+     (click)="RecipeSelected()">
+
+  <div class="recipe-info">
+
+    <label class="card-title">{{ recipe.name }}</label>
+
+    <div class="star-rating">
+      <div class="full-star" [ngStyle]="GetRating()"></div>
+      <div class="empty-star"> </div>
+    </div>
+
+  </div>
+
+  <div class="image">
+
+    <img />
+
+  </div>
+
+</div>

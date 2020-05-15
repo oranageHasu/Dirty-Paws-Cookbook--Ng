@@ -26,8 +26,8 @@ export class RecipeManagerComponent implements OnInit {
   }
 
   /*
-  * Load the Patients from the api service
-  */
+   * Load the Recipes from the api service
+   */
   private async refreshRecipes() {
 
     const recipeFilter: RecipeFilter = new RecipeFilter();
@@ -50,6 +50,16 @@ export class RecipeManagerComponent implements OnInit {
       this.ngxService.stop('refresh-recipes');
 
     }
+
+  }
+
+  /*
+   * User selected a Recipe
+   */
+  public RecipeSelected(recipe: Recipe) {
+
+    console.log('To Do: Handle Recipe Selection.');
+    console.log(recipe);
 
   }
 

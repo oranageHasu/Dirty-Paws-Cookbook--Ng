@@ -3,7 +3,7 @@ import { Instruction } from './instruction';
 
 export class Recipe {
   recipeId?: string;
-  title: string;
+  name: string;
   rating: number;
   ingredients: Ingredient[];
   instructions: Instruction[];

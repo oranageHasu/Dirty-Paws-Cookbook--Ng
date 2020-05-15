@@ -32,6 +32,7 @@ import { LoginScreenComponent } from './components/login-screen/login-screen.com
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { RecipeManagerComponent } from './components/recipe system/recipe-manager/recipe-manager.component';
 import { RecipeComponent } from './components/recipe system/recipe/recipe.component';
+import { RecipeCardComponent } from './components/recipe system/recipe-card/recipe-card.component';
 
 // Custom configuration for the Ngx UI Loader
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
@@ -59,7 +60,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     LoginScreenComponent,
     NavbarComponent,
     RecipeManagerComponent,
-    RecipeComponent
+    RecipeComponent,
+    RecipeCardComponent
   ],
   imports: [
     BrowserModule,

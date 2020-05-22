@@ -5,10 +5,10 @@
 
     <label class="card-title">{{ recipe.name }}</label>
 
-    <div class="star-rating">
-      <div class="full-star" [ngStyle]="GetRating()"></div>
-      <div class="empty-star"> </div>
-    </div>
+    <app-star-rating [(value)]="recipe.rating"
+                     [(size)]="ratingSize"
+                     class="recipe-rating">
+    </app-star-rating>
 
   </div>
 

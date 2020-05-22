@@ -1,0 +1,16 @@
+<div class="star-rating">
+
+  <ngb-rating [(rate)]="value"
+              [starTemplate]="t"
+              [readonly]="true"
+              [max]="5">
+
+    <ng-template #t let-fill="fill">
+      <span class="star" [ngClass]="{'small': IsSmall()}" [class.full]="fill === 100">
+        <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+      </span>
+    </ng-template>
+
+  </ngb-rating>
+
+</div>

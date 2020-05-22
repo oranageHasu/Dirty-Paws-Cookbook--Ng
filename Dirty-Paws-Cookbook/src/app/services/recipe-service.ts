@@ -18,7 +18,45 @@ export class RecipeService extends BaseService {
     super();
   }
 
-  public async getRecipes(filter: RecipeFilter): Promise<Recipe[]> {
+  public async GetRecipe(recipeId: string): Promise<Recipe> {
+
+    let retval: Recipe;
+    let url: string = null;
+    const filter: RecipeFilter = new RecipeFilter();
+
+    if (recipeId !== null) {
+
+      filter.recipeId = recipeId;
+
+      const parameters: HttpParams = this.GetQueryParameters(filter);
+      url = `${environment.apiUrlBase}/${API_RECIPE}`;
+
+      await retry(
+        async () => {
+
+          try {
+
+            retval = await this.http
+              .get<Recipe>(url, { params: parameters })
+              .toPromise()
+              .then(res => {
+                return this.CastResult(res);
+              });
+
+          } catch (err) {
+            console.log('ERROR: Failed GET request for Recipe.');
+          }
+
+        },
+        { retries: CRUD_RETRY }
+      );
+
+    }
+
+    return retval;
+  }
+
+  public async GetRecipes(filter: RecipeFilter): Promise<Recipe[]> {
 
     let retval: Recipe[];
     let url: string = null;
@@ -39,7 +77,7 @@ export class RecipeService extends BaseService {
             });
 
         } catch (err) {
-          console.log('ERROR: Failed GET request for Recipe.');
+          console.log('ERROR: Failed GET request for Recipes.');
         }
 
       },

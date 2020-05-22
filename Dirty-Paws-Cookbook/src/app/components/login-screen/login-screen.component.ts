@@ -45,7 +45,7 @@ export class LoginScreenComponent implements OnInit {
       // On successfull login, navigate to dashboard
       if (user && user.userId != null) {
 
-        // Cache the practice data after a successful login
+        // Cache the user data after a successful login
         await this.api.CacheUserData(user.userName);
 
         // Send the user to the Home screen of the app

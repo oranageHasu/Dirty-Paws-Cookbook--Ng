@@ -2,7 +2,7 @@ import { Component, ChangeDetectorRef, OnInit, OnDestroy } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { LoginService } from '../../services/login-service';
 import { Router } from '@angular/router';
-import { ROUTE_LOGIN } from '../../classes/ui-constants';
+import { ROUTE_LOGIN, MAIN_APP_ROUTE, ROUTE_RECIPES } from '../../classes/ui-constants';
 
 @Component({
   selector: 'app-navbar',
@@ -34,6 +34,13 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this.mobileQueryListener);
+  }
+
+  public GoHome() {
+
+    // Send the user to the User home
+    this.router.navigate([`/${MAIN_APP_ROUTE}/${ROUTE_RECIPES}`]);
+
   }
 
   public async SignOut() {

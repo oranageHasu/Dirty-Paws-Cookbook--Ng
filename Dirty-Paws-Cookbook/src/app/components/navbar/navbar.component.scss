@@ -30,6 +30,10 @@
   margin-left: 8px;
 }
 
+.app-name:hover {
+  cursor: pointer;
+}
+
 .is-mobile .sidenav-container {
   /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
      `<body>` to be our scrolling element for mobile layouts. */

@@ -23,7 +23,7 @@ const routes: Routes = [
     path: MAIN_APP_ROUTE, component: NavbarComponent, canActivate: [AuthGuard],
     children: [
       { path: ROUTE_RECIPES, component: RecipeManagerComponent, canActivate: [AuthGuard] },
-      { path: ROUTE_RECIPE, component: RecipeComponent, canActivate: [AuthGuard] },
+      { path: ROUTE_RECIPE + "/:recipeTag", component: RecipeComponent, canActivate: [AuthGuard] },
     ]
   }
 

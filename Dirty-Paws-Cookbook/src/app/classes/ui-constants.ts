@@ -1,5 +1,6 @@
 // Local Storage Keys
 export const KEY_USERNAME = 'Username';
+export const KEY_RECIPE = 'Recipe';
 
 // Screen Routes
 export const ROUTE_SLASH = '/';

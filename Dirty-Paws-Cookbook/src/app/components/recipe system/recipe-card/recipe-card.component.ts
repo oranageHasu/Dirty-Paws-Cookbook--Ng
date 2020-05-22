@@ -14,19 +14,14 @@ export class RecipeCardComponent implements OnInit {
   // Outputs
   @Output() recipeSelected = new EventEmitter();
 
+  public ratingSize = 'small';
+
   constructor(
 
   ) { }
 
   ngOnInit() {
 
-    console.log(this.recipe);
-
-  }
-
-  public GetRating() {
-    const styles = { 'width': `${this.recipe.rating*20}%` };
-    return styles;
   }
 
   public RecipeSelected() {

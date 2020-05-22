@@ -1,1 +1,66 @@
-<p>recipe works!</p>
+<div class="container">
+
+  <div class="container-main">
+
+    <!-- Recipe Info -->
+    <div class="container-recipe">
+
+      <!-- Recipe Header -->
+      <div class="container-recipe-header">
+
+        <div class="recipe-info">
+
+          <label class="recipe-title">{{ recipe.name }}</label>
+
+          <app-star-rating [(value)]="recipe.rating"
+                           class="recipe-rating">
+          </app-star-rating>
+
+          <span class="recipe-author-title">
+            Recipe By:
+            <span class="author">Hardcoded Bob</span>
+          </span>
+
+          <span class="recipe-summary">"Hardcoded recipe summary.  This is a good recipe."</span>
+        </div>
+
+        <div class="image">
+
+          <img />
+
+        </div>
+
+      </div>
+
+      <!-- Recipe Ingredients -->
+      <div class="container-ingredients">
+
+        <app-section-header title="Ingredients"></app-section-header>
+        <app-ingredient *ngFor="let ingredient of recipe.ingredients"
+                         [(ingredient)]="ingredient"
+                         (ingredientSelected)="IngredientSelected(ingredient)">
+        </app-ingredient>
+
+      </div>
+
+      <!-- Recipe Instructions -->
+      <div class="container-instructions">
+
+        <app-section-header title="Instructions"></app-section-header>
+        <app-instruction *ngFor="let instruction of recipe.instructions"
+                        [(instruction)]="instruction"
+                        (instructionSelected)="InstructionSelected(instruction)">
+        </app-instruction>
+
+      </div>
+
+    </div>
+
+    <!-- Suggested Recipes -->
+    <div class="container-suggested-recipes">
+      <label class="title">Suggested Recipes</label>
+    </div>
+
+  </div>
+
+</div>

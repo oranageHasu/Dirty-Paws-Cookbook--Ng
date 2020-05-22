@@ -1,0 +1,35 @@
+@import "../../../../assets/scss/styles.scss";
+
+.container {
+  display:flex;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.ingredient {
+  color: black;
+  font-size: 18px;
+  padding-bottom: 5px;
+  align-self: center;
+  padding-left: 15px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+}
+
+.add-button {
+  height: 35px;
+  width: 35px;
+  background-color: transparent;
+  box-shadow: none;
+  border: 1px solid lightgrey;
+}
+
+.add-button-icon {
+    margin-top: -23px;
+    color: lightgrey;
+}

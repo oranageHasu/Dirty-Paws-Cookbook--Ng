@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SessionService } from '../../../services/session-service';
+import { Recipe } from '../../../models/recipe';
 
 @Component({
   selector: 'app-recipe',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipeComponent implements OnInit {
 
-  constructor() { }
+  public recipe: Recipe = new Recipe();
+
+  constructor(
+    private session: SessionService
+  ) { }
 
   ngOnInit() {
+
+    this.recipe = this.session.CurrentRecipe;
+    console.log(this.recipe);
+
+  }
+
+  public IngredientSelected() {
+
+    console.log('To Do: Handle Ingredient selected.');
+
   }
 
 }

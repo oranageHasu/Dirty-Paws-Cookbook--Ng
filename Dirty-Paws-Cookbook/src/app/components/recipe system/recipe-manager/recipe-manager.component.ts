@@ -4,6 +4,8 @@ import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { RecipeFilter } from '../../../models/recipe-filter';
 import { RecipeService } from '../../../services/recipe-service';
 import { Recipe } from '../../../models/recipe';
+import { MAIN_APP_ROUTE, ROUTE_SLASH, ROUTE_RECIPE } from '../../../classes/ui-constants';
+import { SessionService } from '../../../services/session-service';
 
 @Component({
   selector: 'app-recipe-manager',
@@ -18,7 +20,8 @@ export class RecipeManagerComponent implements OnInit {
   constructor(
     private api: RecipeService,
     private router: Router,
-    private ngxService: NgxUiLoaderService
+    private ngxService: NgxUiLoaderService,
+    private session: SessionService
   ) { }
 
   async ngOnInit() {
@@ -38,7 +41,7 @@ export class RecipeManagerComponent implements OnInit {
       this.ngxService.start('refresh-recipes');
 
       // Refresh the Recipes (retrieve from web service)
-      this.recipes = await this.api.getRecipes(recipeFilter);
+      this.recipes = await this.api.GetRecipes(recipeFilter);
 
     } catch (err) {
 
@@ -58,8 +61,8 @@ export class RecipeManagerComponent implements OnInit {
    */
   public RecipeSelected(recipe: Recipe) {
 
-    console.log('To Do: Handle Recipe Selection.');
-    console.log(recipe);
+    this.session.CurrentRecipe = recipe;
+    this.router.navigate([`/${MAIN_APP_ROUTE + ROUTE_SLASH + ROUTE_RECIPE + ROUTE_SLASH + recipe.URLCompliantName()}`]);
 
   }
 

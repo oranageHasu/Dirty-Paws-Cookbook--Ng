@@ -1,0 +1,21 @@
+@import "../../../assets/scss/styles.scss";
+
+.container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.font {
+  @extend .header-font;
+  color: black;
+  font-weight: 200;
+}
+
+.divider-line {
+  width: 100%;
+  height: 2px;
+  margin-top: 5px;
+  border-radius: 15px;
+  background-color: black;
+}

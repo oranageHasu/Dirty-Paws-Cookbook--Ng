@@ -1,0 +1,25 @@
+.star-rating {
+  width: 100%;
+}
+
+.star {
+  position: relative;
+  display: inline-block;
+  color: #d3d3d3;
+  font-size: 40px;
+}
+
+.full {
+  color: orange;
+}
+
+.half {
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  color: orange;
+}
+
+.small {
+    font-size: 25px;
+}

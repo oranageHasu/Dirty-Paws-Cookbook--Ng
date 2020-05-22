@@ -29,3 +29,11 @@ $header-text-color: $text-white;
 .primary-app-background-color {
   background-color: $primary-app-color;
 }
+
+.light-to-black-gradient {
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, $main-black-shade-dark 45%);
+}
+
+.black-to-light-gradient {
+  background: linear-gradient(90deg, $main-black-shade-dark 0%, rgba(255,255,255,1) 85%);
+}

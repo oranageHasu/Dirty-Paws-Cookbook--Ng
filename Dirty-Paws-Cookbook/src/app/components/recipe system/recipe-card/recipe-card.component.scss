@@ -6,7 +6,7 @@
   flex-direction: row;
   padding: 0px;
   height: 150px;
-  width: 400px;
+  width: 500px;
   background-color: white;
   border-radius: 8px;
   margin: 10px;
@@ -24,6 +24,11 @@
       font-size: 18px;
       padding-bottom: 5px;
     }
+
+    .recipe-rating {
+      align-self: flex-start;
+      margin-left: -20px;
+    }
   }
 
   .image {
@@ -35,26 +40,4 @@
 
 .card:hover {
   cursor: pointer;
-}
-
-.star-rating {
-  height: 30px;
-  width: 150px;
-  background-color: transparent;
-  position: relative;
-}
-
-.full-star {
-  position: absolute;
-  z-index: 1;
-  height: 100%;
-  background-image: url('../../../../assets/images/ReviewStars5.png');
-  background-size: 147px 28px;
-}
-
-.empty-star {
-  width: 100%;
-  height: 100%;
-  //background-image: url('../../../../assets/images/ReviewStars5_empty.png');
-  background-size: 150px 30px;
 }

@@ -17,7 +17,6 @@ export class StarRatingComponent implements OnInit {
 
   public IsSmall(): boolean {
 
-    console.log(this.size);
     return this.size === 'small';
 
   }

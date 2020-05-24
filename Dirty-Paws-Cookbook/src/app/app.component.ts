@@ -3,6 +3,7 @@ import { RecipeService } from './services/recipe-service';
 import { SessionService } from './services/session-service';
 import { RecipeFilter } from './models/recipe-filter';
 import { Recipe } from './models/recipe';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,9 @@ import { Recipe } from './models/recipe';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   title = 'Dirty-Paws-Cookbook';
+
 }
 
 /*
@@ -27,7 +30,9 @@ export function InitApp(api: RecipeService, session: SessionService) {
       return api.GetRecipe(recipeId)
         .then((recipe) => {
 
-          session.CurrentRecipe = recipe;
+          if (recipe) {
+            session.CurrentRecipe = recipe;
+          }
 
         });
 

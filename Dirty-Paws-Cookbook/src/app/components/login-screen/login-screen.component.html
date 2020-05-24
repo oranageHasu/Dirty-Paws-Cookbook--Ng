@@ -13,10 +13,10 @@
         <input matInput
                type="text"
                [(ngModel)]="username"
+               color="input-field"
                class="input-font"
                (keyup.enter)="FocusPassword()">
-        <button mat-button
-                *ngIf="username"
+        <button *ngIf="username"
                 matSuffix
                 mat-icon-button
                 aria-label="Clear"
@@ -34,8 +34,7 @@
                [(ngModel)]="password"
                class="input-font"
                (keyup.enter)="AuthenticateLogin()">
-        <button mat-button
-                *ngIf="password"
+        <button *ngIf="password"
                 matSuffix
                 mat-icon-button
                 aria-label="Clear"
@@ -45,9 +44,7 @@
       </mat-form-field>
 
       <!-- Sign in button -->
-      <button mat-button
-              class="button"
-              type="submit"
+      <button mat-stroked-button
               (click)="AuthenticateLogin()">
         Sign in
       </button>

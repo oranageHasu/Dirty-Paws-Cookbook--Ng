@@ -16,8 +16,13 @@
   flex: 1;
 }
 
-.sidenav-content-container{
+.sidenav-content-container {
   padding: 10px;
+  background: $lightmode-main-screen-color;
+}
+
+.dark-background {
+  background: $darkmode-main-screen-color;
 }
 
 .is-mobile .toolbar {
@@ -32,6 +37,10 @@
 
 .app-name:hover {
   cursor: pointer;
+}
+
+.dark-mode-label {
+  padding-right: 5px;
 }
 
 .is-mobile .sidenav-container {

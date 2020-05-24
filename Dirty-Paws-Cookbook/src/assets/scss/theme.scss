@@ -1,0 +1,106 @@
+@import "../../../node_modules/@angular/material/_theming.scss";
+@include mat-core;
+
+$white: white;
+$black: black;
+
+@mixin html-theme($theme) {
+  & {
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+
+    background-color: mat-color($background, background);
+    color: mat-color($foreground, text);
+    // other html element styling here
+  }
+}
+
+.light-theme {
+  /***************/
+  /* Light Theme */
+  /***************/
+  $app-primary: ( 50 : #014A53, 100 : #014A53, 200 : #014A53, 300 : #014A53, 400 : #014A53, 500 : #014A53, 600 : #014A53, 700 : #014A53, 800 : #014A53, 900 : #014A53, A100 : #014A53, A200 : #014A53, A400 : #014A53, A700 : #014A53, contrast: ( 50 : #000000, 100 : #000000, 200 : #000000, 300 : #000000, 400 : #ffffff, 500 : #ffffff, 600 : #ffffff, 700 : #ffffff, 800 : #ffffff, 900 : #ffffff, A100 : #000000, A200 : #000000, A400 : #ffffff, A700 : #ffffff, ) );
+  $app-accent: ( 50 : #BBC4C9, 100 : #BBC4C9, 200 : #BBC4C9, 300 : #BBC4C9, 400 : #BBC4C9, 500 : #BBC4C9, 600 : #BBC4C9, 700 : #BBC4C9, 800 : #BBC4C9, 900 : #BBC4C9, A100 : #BBC4C9, A200 : #BBC4C9, A400 : #BBC4C9, A700 : #BBC4C9, contrast: ( 50 : #000000, 100 : #000000, 200 : #000000, 300 : #000000, 400 : #ffffff, 500 : #ffffff, 600 : #ffffff, 700 : #ffffff, 800 : #ffffff, 900 : #ffffff, A100 : #000000, A200 : #000000, A400 : #ffffff, A700 : #ffffff, ) );
+  $app-warning: ( 50 : #014A53, 100 : #014A53, 200 : #014A53, 300 : #014A53, 400 : #014A53, 500 : #014A53, 600 : #014A53, 700 : #014A53, 800 : #014A53, 900 : #014A53, A100 : #014A53, A200 : #014A53, A400 : #014A53, A700 : #014A53, contrast: ( 50 : #000000, 100 : #000000, 200 : #000000, 300 : #000000, 400 : #ffffff, 500 : #ffffff, 600 : #ffffff, 700 : #ffffff, 800 : #ffffff, 900 : #ffffff, A100 : #000000, A200 : #000000, A400 : #ffffff, A700 : #ffffff, ) );
+
+  $light-theme-primary: mat-palette($app-primary);
+  $light-theme-accent: mat-palette($app-accent);
+  $light-theme-warn: mat-palette($app-warning);
+
+  $light-theme: mat-light-theme($light-theme-primary, $light-theme-accent, $light-theme-warn);
+
+  // Insert custom background color
+  @function light-theme-background($color) {
+    @return ( base: $color, divider: $black-12-opacity, dividers: $black-12-opacity, disabled: rgba($color, 0.38), disabled-button: rgba($color, 0.38), disabled-text: rgba($color, 0.38), hint-text: rgba($color, 0.38), secondary-text: rgba($color, 0.54), icon: rgba($color, 0.54), icons: rgba($color, 0.54), text: rgba($color, 0.87), slider-off: rgba($color, 0.26), slider-off-active: rgba($color, 0.38) );
+  }
+
+  ;
+
+  $light-theme-background-color: light-theme-background($white);
+  $light-theme: map_merge($light-theme, (background: $light-theme-background-color));
+
+  // Insert custom foreground color
+  @function light-theme-foreground($color) {
+    @return ( base: $color, divider: $black-12-opacity, dividers: $black-12-opacity, disabled: rgba($color, 0.38), disabled-button: rgba($color, 0.38), disabled-text: rgba($color, 0.38), hint-text: rgba($color, 0.38), secondary-text: rgba($color, 0.54), icon: rgba($color, 0.54), icons: rgba($color, 0.54), text: rgba($color, 0.87), slider-off: rgba($color, 0.26), slider-off-active: rgba($color, 0.38) );
+  }
+
+  ;
+
+  $light-theme-foreground-color: light-theme-foreground($white);
+  $light-theme: map-merge($light-theme, (foreground: $light-theme-foreground-color));
+
+  // Insert custom border color
+
+  $light-theme-border-color: $black;
+  $light-theme: map-merge($light-theme, (border-color: $light-theme-border-color));
+
+  // Include theme styles for Angular Material components.
+  @include angular-material-theme($light-theme);
+
+  @at-root main.light-theme {
+    @include html-theme($light-theme);
+  }
+}
+
+.dark-theme {
+  /***************/
+  /* Dark Theme */
+  /***************/
+  $app-primary: ( 50 : #014A53, 100 : #014A53, 200 : #014A53, 300 : #014A53, 400 : #014A53, 500 : #014A53, 600 : #014A53, 700 : #014A53, 800 : #014A53, 900 : #014A53, A100 : #014A53, A200 : #014A53, A400 : #014A53, A700 : #014A53, contrast: ( 50 : #000000, 100 : #000000, 200 : #000000, 300 : #000000, 400 : #ffffff, 500 : #ffffff, 600 : #ffffff, 700 : #ffffff, 800 : #ffffff, 900 : #ffffff, A100 : #000000, A200 : #000000, A400 : #ffffff, A700 : #ffffff, ) );
+  $app-accent: ( 50 : #BBC4C9, 100 : #BBC4C9, 200 : #BBC4C9, 300 : #BBC4C9, 400 : #BBC4C9, 500 : #BBC4C9, 600 : #BBC4C9, 700 : #BBC4C9, 800 : #BBC4C9, 900 : #BBC4C9, A100 : #BBC4C9, A200 : #BBC4C9, A400 : #BBC4C9, A700 : #BBC4C9, contrast: ( 50 : #000000, 100 : #000000, 200 : #000000, 300 : #000000, 400 : #ffffff, 500 : #ffffff, 600 : #ffffff, 700 : #ffffff, 800 : #ffffff, 900 : #ffffff, A100 : #000000, A200 : #000000, A400 : #ffffff, A700 : #ffffff, ) );
+  $app-warning: ( 50 : #014A53, 100 : #014A53, 200 : #014A53, 300 : #014A53, 400 : #014A53, 500 : #014A53, 600 : #014A53, 700 : #014A53, 800 : #014A53, 900 : #014A53, A100 : #014A53, A200 : #014A53, A400 : #014A53, A700 : #014A53, contrast: ( 50 : #000000, 100 : #000000, 200 : #000000, 300 : #000000, 400 : #ffffff, 500 : #ffffff, 600 : #ffffff, 700 : #ffffff, 800 : #ffffff, 900 : #ffffff, A100 : #000000, A200 : #000000, A400 : #ffffff, A700 : #ffffff, ) );
+
+  $dark-theme-primary: mat-palette($app-primary);
+  $dark-theme-accent: mat-palette($app-accent);
+  $dark-theme-warn: mat-palette($app-warning);
+
+  $dark-theme: mat-dark-theme($dark-theme-primary, $dark-theme-accent, $dark-theme-warn);
+
+  // Insert custom background color
+  @function dark-theme-background($color) {
+    @return ( base: $color, divider: $black-12-opacity, dividers: $black-12-opacity, disabled: rgba($color, 0.38), disabled-button: rgba($color, 0.38), disabled-text: rgba($color, 0.38), hint-text: rgba($color, 0.38), secondary-text: rgba($color, 0.54), icon: rgba($color, 0.54), icons: rgba($color, 0.54), text: rgba($color, 0.87), slider-off: rgba($color, 0.26), slider-off-active: rgba($color, 0.38) );
+  };
+
+  $dark-theme-background-color: dark-theme-background($black);
+  $dark-theme: map_merge($dark-theme, (background: $dark-theme-background-color));
+
+  // Insert custom foreground color
+  @function dark-theme-foreground($color) {
+    @return ( base: $color, divider: $black-12-opacity, dividers: $black-12-opacity, disabled: rgba($color, 0.38), disabled-button: rgba($color, 0.38), disabled-text: rgba($color, 0.38), hint-text: rgba($color, 0.38), secondary-text: rgba($color, 0.54), icon: rgba($color, 0.54), icons: rgba($color, 0.54), text: rgba($color, 0.87), slider-off: rgba($color, 0.26), slider-off-active: rgba($color, 0.38) );
+  };
+
+  $dark-theme-foreground-color: dark-theme-foreground($white);
+  $dark-theme: map-merge($dark-theme, (foreground: $dark-theme-foreground-color));
+
+  // Insert custom border color
+
+  $dark-theme-border-color: $white;
+  $dark-theme: map-merge($dark-theme, (border-color: $dark-theme-border-color));
+
+  // Include theme styles for Angular Material components.
+  @include angular-material-theme($dark-theme);
+
+  @at-root main.dark-theme {
+    @include html-theme($dark-theme);
+  }
+}

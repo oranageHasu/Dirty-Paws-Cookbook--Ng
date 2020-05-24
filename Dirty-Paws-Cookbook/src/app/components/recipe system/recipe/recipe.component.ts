@@ -18,7 +18,6 @@ export class RecipeComponent implements OnInit {
   ngOnInit() {
 
     this.recipe = this.session.CurrentRecipe;
-    console.log(this.recipe);
 
   }
 

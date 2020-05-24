@@ -76,8 +76,6 @@ export class LoginScreenComponent implements OnInit {
 
   public FocusPassword() {
 
-    console.log('here');
-
     // If there already exists a password, attempt a login.
     // Else, set set focus to the password field
     if (this.password != null && this.password.length > 0) {

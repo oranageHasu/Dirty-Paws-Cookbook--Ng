@@ -1,9 +1,12 @@
 import { Recipe } from '../models/recipe';
 import { KEY_RECIPE } from '../classes/ui-constants';
-import { OnDestroy } from '@angular/core';
+import { OnDestroy, Injectable } from '@angular/core';
 
 // Beware, this is not "F5 refresh" resilient
 // This should be enhanced using the APP_INITIALIZER token + localmemory to retrieve required "active" data as needed
+@Injectable({
+  providedIn: 'root'
+})
 export class SessionService implements OnDestroy {
 
   private currentRecipe: Recipe = null;

@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, APP_INITIALIZER } from '@angular/core';
+import { NgModule, APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -20,12 +20,16 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 // Ng-Bootstrap
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // Routing
 import { AppRoutingModule } from './app-routing.module';
+
+// Theme Service
+import { ThemeService } from './services/theme-service';
 
 // App Session Service
 // This is a Singleton Service Class that represents the current application session
@@ -51,8 +55,8 @@ import { InstructionComponent } from './components/recipe system/instruction/ins
 
 // Custom configuration for the Ngx UI Loader
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
-  fgsColor: '#ff3333',
-  bgsColor: '#ff3333',
+  fgsColor: '#014A53',
+  bgsColor: '#014A53',
   fgsPosition: POSITION.centerCenter,
   bgsPosition: POSITION.centerCenter,
   fgsSize: 80,
@@ -98,6 +102,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     MatListModule,
     MatCheckboxModule,
     MatButtonModule,
+    MatSlideToggleModule,
     NgbModule
   ],
   providers: [
@@ -113,8 +118,10 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
       deps: [RecipeService, SessionService]
     },
     AuthGuard,
-    SessionService
+    SessionService,
+    ThemeService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

@@ -3,6 +3,7 @@ import { MediaMatcher } from '@angular/cdk/layout';
 import { LoginService } from '../../services/login-service';
 import { Router } from '@angular/router';
 import { ROUTE_LOGIN, MAIN_APP_ROUTE, ROUTE_RECIPES } from '../../classes/ui-constants';
+import { ThemeService } from '../../services/theme-service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,6 +13,7 @@ import { ROUTE_LOGIN, MAIN_APP_ROUTE, ROUTE_RECIPES } from '../../classes/ui-con
 export class NavbarComponent implements OnInit, OnDestroy {
 
   mobileQuery: MediaQueryList;
+  isDarkTheme: boolean = false;
 
   fillerNav = Array.from({ length: 3 }, (_, i) => `Nav Item ${i + 1}`);
 
@@ -21,7 +23,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
     public changeDetectorRef: ChangeDetectorRef,
     public media: MediaMatcher,
     private api: LoginService,
-    private router: Router
+    private router: Router,
+    private themeService: ThemeService
   ) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this.mobileQueryListener = () => changeDetectorRef.detectChanges();
@@ -29,7 +32,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-
+    this.isDarkTheme = this.themeService.IsDarkTheme();
   }
 
   ngOnDestroy(): void {
@@ -40,6 +43,13 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
     // Send the user to the User home
     this.router.navigate([`/${MAIN_APP_ROUTE}/${ROUTE_RECIPES}`]);
+
+  }
+
+  public ToggleDarkTheme(checked: boolean) {
+
+    this.themeService.SetDarkTheme(checked);
+    this.isDarkTheme = this.themeService.IsDarkTheme();
 
   }
 

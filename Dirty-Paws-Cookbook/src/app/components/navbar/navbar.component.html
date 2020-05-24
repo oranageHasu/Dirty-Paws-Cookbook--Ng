@@ -1,4 +1,6 @@
-<div class="navigation-container" [class.is-mobile]="mobileQuery.matches">
+<div class="navigation-container"
+     [class.is-mobile]="mobileQuery.matches"
+     [ngClass]="{'dark-theme': isDarkTheme, 'light-theme': !isDarkTheme}">
 
   <!-- Top Nav Bar -->
   <mat-toolbar color="primary" class="toolbar">
@@ -14,10 +16,17 @@
 
       </div>
 
+      <!-- App Theme Toggle -->
+      <div style="padding-right: 35px;">
+        <span class="dark-mode-label">Dark Mode</span>
+        <mat-slide-toggle [checked]="isDarkTheme"
+                          (change)="ToggleDarkTheme($event.checked)">
+        </mat-slide-toggle>
+      </div>
+
       <!-- Nav Right-side Buttons-->
-      <button mat-icon-button
-              (click)="SignOut()"
-              class="logout-button">
+      <button mat-raised-button
+              (click)="SignOut()">
         Sign Out
       </button>
 
@@ -26,12 +35,12 @@
 
   <!-- Side Nav Bar -->
   <mat-sidenav-container class="sidenav-container"
-                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+                          [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
 
     <mat-sidenav #sidenav
-                 [mode]="mobileQuery.matches ? 'over' : 'side'"
-                 [fixedInViewport]="mobileQuery.matches"
-                 fixedTopGap="56">
+                  [mode]="mobileQuery.matches ? 'over' : 'side'"
+                  [fixedInViewport]="mobileQuery.matches"
+                  fixedTopGap="56">
 
       <mat-nav-list>
 
@@ -41,7 +50,8 @@
 
     </mat-sidenav>
 
-    <mat-sidenav-content class="sidenav-content-container">
+    <mat-sidenav-content class="sidenav-content-container"
+                         [ngClass]="{'dark-background': isDarkTheme}">
 
       <!-- This is our nested child routes for internal app screens -->
       <router-outlet></router-outlet>

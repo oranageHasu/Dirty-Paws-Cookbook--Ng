@@ -36,6 +36,9 @@ import { ThemeService } from './services/theme-service';
 // Its intended to be used via Dependency Injection
 import { SessionService } from './services/session-service';
 
+// Workflow Service
+import { WorkflowService } from './services/workflow-service';
+
 // Used as a injectable dependency for InitApp() which re-established the SessionService
 import { RecipeService } from './services/recipe-service';
 
@@ -52,6 +55,7 @@ import { StarRatingComponent } from './components/star-rating/star-rating.compon
 import { SectionHeaderComponent } from './components/section-header/section-header.component';
 import { IngredientComponent } from './components/recipe system/ingredient/ingredient.component';
 import { InstructionComponent } from './components/recipe system/instruction/instruction.component';
+import { WorkflowContainerComponent } from './workflows/workflow-container/workflow-container.component';
 
 // Custom configuration for the Ngx UI Loader
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
@@ -84,7 +88,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     StarRatingComponent,
     SectionHeaderComponent,
     IngredientComponent,
-    InstructionComponent
+    InstructionComponent,
+    WorkflowContainerComponent,
   ],
   imports: [
     BrowserModule,
@@ -103,7 +108,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     MatCheckboxModule,
     MatButtonModule,
     MatSlideToggleModule,
-    NgbModule
+    NgbModule,
   ],
   providers: [
     {
@@ -119,7 +124,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     },
     AuthGuard,
     SessionService,
-    ThemeService
+    ThemeService,
+    WorkflowService
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

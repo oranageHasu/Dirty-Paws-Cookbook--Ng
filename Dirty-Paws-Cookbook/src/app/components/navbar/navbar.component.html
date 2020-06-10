@@ -44,8 +44,9 @@
 
       <mat-nav-list>
 
-        <!-- Some seeded display data for now... -->
-        <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a>
+        <!-- Use OCR to scan a new Recipe. -->
+        <a mat-list-item (click)="RouteOcr()">Scan New Recipe</a>
+
       </mat-nav-list>
 
     </mat-sidenav>

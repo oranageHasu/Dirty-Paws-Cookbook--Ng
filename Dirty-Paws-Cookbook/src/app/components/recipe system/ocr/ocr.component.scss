@@ -1,0 +1,23 @@
+@import "../../../../assets/scss/styles.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+
+  .ocr-button {
+      @extend .button;
+      width: 220px;
+      height: 70px;
+      align-self: center;
+  }
+
+  .or {
+      align-self: center;
+      font-size: 35px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+  }
+}

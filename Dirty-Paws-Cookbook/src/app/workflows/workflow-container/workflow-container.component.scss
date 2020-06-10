@@ -1,0 +1,30 @@
+.workflow {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 98%;
+  width: 100%;
+
+  .content {
+    flex: 1;
+  }
+
+  .operation-buttons {
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .button-container {
+      padding-left: 50px;
+      padding-right: 50px;
+      align-self: center;
+
+      .op-button {
+        height: 40px;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+    }
+  }
+}

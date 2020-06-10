@@ -5,14 +5,15 @@ import { LoginScreenComponent } from './components/login-screen/login-screen.com
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { RecipeManagerComponent } from './components/recipe system/recipe-manager/recipe-manager.component';
 import { RecipeComponent } from './components/recipe system/recipe/recipe.component';
-
+import { WorkflowContainerComponent } from './workflows/workflow-container/workflow-container.component';
+import { CreateRecipeModule } from './workflows/create-recipe/create-recipe.module';
 import {
   MAIN_APP_ROUTE,
   ROUTE_RECIPES,
   ROUTE_RECIPE,
-  ROUTE_LOGIN
+  ROUTE_LOGIN,
+  WORKFLOW_ROUTE_ADD_RECIPE
 } from './classes/ui-constants';
-
 
 const routes: Routes = [
 
@@ -24,6 +25,11 @@ const routes: Routes = [
     children: [
       { path: ROUTE_RECIPES, component: RecipeManagerComponent, canActivate: [AuthGuard] },
       { path: ROUTE_RECIPE + "/:recipeTag", component: RecipeComponent, canActivate: [AuthGuard] },
+      {
+        path: WORKFLOW_ROUTE_ADD_RECIPE,
+        component: WorkflowContainerComponent,
+        loadChildren: () => CreateRecipeModule
+      }
     ]
   }
 

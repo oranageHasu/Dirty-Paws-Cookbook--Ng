@@ -1,9 +1,11 @@
 $main-white: white;
 $main-black: black;
 
-$primary-app-color: #cc0000;
-$primary-app-color-light: lighten($primary-app-color, 30%);
-$hover: #ff3333;
+$primary-app-color: #014A53;
+$primary-app-accent-color: #BBC4C9;
+
+$primary-app-color-light: lighten($primary-app-color, 5%);
+$hover: lighten($primary-app-color, 5%);
 
 $border-gray: lighten(gray, 40%);
 

@@ -19,14 +19,13 @@ $black: black;
   /***************/
   /* Light Theme */
   /***************/
-  $app-primary: ( 50 : #014A53, 100 : #014A53, 200 : #014A53, 300 : #014A53, 400 : #014A53, 500 : #014A53, 600 : #014A53, 700 : #014A53, 800 : #014A53, 900 : #014A53, A100 : #014A53, A200 : #014A53, A400 : #014A53, A700 : #014A53, contrast: ( 50 : #000000, 100 : #000000, 200 : #000000, 300 : #000000, 400 : #ffffff, 500 : #ffffff, 600 : #ffffff, 700 : #ffffff, 800 : #ffffff, 900 : #ffffff, A100 : #000000, A200 : #000000, A400 : #ffffff, A700 : #ffffff, ) );
-  $app-accent: ( 50 : #BBC4C9, 100 : #BBC4C9, 200 : #BBC4C9, 300 : #BBC4C9, 400 : #BBC4C9, 500 : #BBC4C9, 600 : #BBC4C9, 700 : #BBC4C9, 800 : #BBC4C9, 900 : #BBC4C9, A100 : #BBC4C9, A200 : #BBC4C9, A400 : #BBC4C9, A700 : #BBC4C9, contrast: ( 50 : #000000, 100 : #000000, 200 : #000000, 300 : #000000, 400 : #ffffff, 500 : #ffffff, 600 : #ffffff, 700 : #ffffff, 800 : #ffffff, 900 : #ffffff, A100 : #000000, A200 : #000000, A400 : #ffffff, A700 : #ffffff, ) );
+  $app-primary: ( 50 : $primary-app-color, 100 : $primary-app-color, 200 : $primary-app-color, 300 : $primary-app-color, 400 : $primary-app-color, 500 : $primary-app-color, 600 : $primary-app-color, 700 : $primary-app-color, 800 : $primary-app-color, 900 : $primary-app-color, A100 : $primary-app-color, A200 : $primary-app-color, A400 : $primary-app-color, A700 : $primary-app-color, contrast: ( 50 : #000000, 100 : #000000, 200 : #000000, 300 : #000000, 400 : #ffffff, 500 : #ffffff, 600 : #ffffff, 700 : #ffffff, 800 : #ffffff, 900 : #ffffff, A100 : #000000, A200 : #000000, A400 : #ffffff, A700 : #ffffff, ) );
+  $app-accent: ( 50 : $primary-app-accent-color, 100 : $primary-app-accent-color, 200 : $primary-app-accent-color, 300 : $primary-app-accent-color, 400 : $primary-app-accent-color, 500 : $primary-app-accent-color, 600 : $primary-app-accent-color, 700 : $primary-app-accent-color, 800 : $primary-app-accent-color, 900 : $primary-app-accent-color, A100 : $primary-app-accent-color, A200 : $primary-app-accent-color, A400 : $primary-app-accent-color, A700 : $primary-app-accent-color, contrast: ( 50 : #000000, 100 : #000000, 200 : #000000, 300 : #000000, 400 : #ffffff, 500 : #ffffff, 600 : #ffffff, 700 : #ffffff, 800 : #ffffff, 900 : #ffffff, A100 : #000000, A200 : #000000, A400 : #ffffff, A700 : #ffffff, ) );
   $app-warning: ( 50 : #014A53, 100 : #014A53, 200 : #014A53, 300 : #014A53, 400 : #014A53, 500 : #014A53, 600 : #014A53, 700 : #014A53, 800 : #014A53, 900 : #014A53, A100 : #014A53, A200 : #014A53, A400 : #014A53, A700 : #014A53, contrast: ( 50 : #000000, 100 : #000000, 200 : #000000, 300 : #000000, 400 : #ffffff, 500 : #ffffff, 600 : #ffffff, 700 : #ffffff, 800 : #ffffff, 900 : #ffffff, A100 : #000000, A200 : #000000, A400 : #ffffff, A700 : #ffffff, ) );
 
   $light-theme-primary: mat-palette($app-primary);
   $light-theme-accent: mat-palette($app-accent);
   $light-theme-warn: mat-palette($app-warning);
-
   $light-theme: mat-light-theme($light-theme-primary, $light-theme-accent, $light-theme-warn);
 
   // Insert custom background color

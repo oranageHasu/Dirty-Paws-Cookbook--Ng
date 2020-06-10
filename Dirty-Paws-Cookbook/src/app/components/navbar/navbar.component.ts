@@ -1,9 +1,12 @@
-import { Component, ChangeDetectorRef, OnInit, OnDestroy } from '@angular/core';
+import { Component, ChangeDetectorRef, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { LoginService } from '../../services/login-service';
 import { Router } from '@angular/router';
-import { ROUTE_LOGIN, MAIN_APP_ROUTE, ROUTE_RECIPES } from '../../classes/ui-constants';
+import { ROUTE_LOGIN, MAIN_APP_ROUTE, ROUTE_RECIPES, WORKFLOW_ROUTE_ADD_RECIPE, WORKFLOW_ROUTE_ADD_RECIPE_OCR } from '../../classes/ui-constants';
 import { ThemeService } from '../../services/theme-service';
+import { MatSidenav } from '@angular/material/sidenav';
+import { CreateRecipeAuthGuard } from '../../workflows/create-recipe/create-recipe-auth-guard';
+import { SessionService } from '../../services/session-service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,6 +14,8 @@ import { ThemeService } from '../../services/theme-service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit, OnDestroy {
+
+  @ViewChild('sidenav', { static: false }) sidenav: MatSidenav;
 
   mobileQuery: MediaQueryList;
   isDarkTheme: boolean = false;
@@ -24,7 +29,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
     public media: MediaMatcher,
     private api: LoginService,
     private router: Router,
-    private themeService: ThemeService
+    private themeService: ThemeService,
+    private sessionService: SessionService
   ) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this.mobileQueryListener = () => changeDetectorRef.detectChanges();
@@ -43,6 +49,14 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
     // Send the user to the User home
     this.router.navigate([`/${MAIN_APP_ROUTE}/${ROUTE_RECIPES}`]);
+
+  }
+
+  public RouteOcr() {
+
+    this.router.navigate([`/${MAIN_APP_ROUTE}/${WORKFLOW_ROUTE_ADD_RECIPE}/${WORKFLOW_ROUTE_ADD_RECIPE_OCR}`], { state: { workflow: new CreateRecipeAuthGuard(this.router, this.sessionService) } });
+
+    this.sidenav.close();
 
   }
 

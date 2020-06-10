@@ -1,0 +1,59 @@
+<div class="workflow">
+
+  <!-- Workflow content container -->
+  <div class="content">
+
+    <!-- This router outlet houses any displayable route for all Workflows -->
+    <router-outlet></router-outlet>
+
+  </div>
+
+  <!-- Workflow operation button container -->
+  <div class="operation-buttons">
+
+    <!-- Screen Navigation Buttons -->
+    <div class="button-container"
+         *ngIf="workflow.displayMovementButtons">
+
+      <!-- Last Screen -->
+      <button mat-icon-button
+              class="op-button large"
+              (click)="Prev()"
+               *ngIf="!workflow.IsFirstScreen()">
+        <mat-icon>navigate_before</mat-icon>
+      </button>
+
+      <!-- Next Screen -->
+      <button mat-icon-button
+              class="op-button large"
+              (click)="Next()"
+              *ngIf="!workflow.IsLastScreen()">
+        <mat-icon>navigate_next</mat-icon>
+      </button>
+
+    </div>
+
+    <!-- User Interaction Buttons -->
+    <div class="button-container">
+
+      <!-- Cancel -->
+      <button mat-icon-button
+              (click)="Cancel()"
+              class="op-button large"
+              *ngIf="workflow.DisplayCancel()">
+        <mat-icon>cancel</mat-icon>
+      </button>
+
+      <!-- Save -->
+      <button mat-icon-button
+              (click)="Save()"
+              class="op-button large"
+              *ngIf="workflow.DisplaySave()">
+        <mat-icon class="op-icon">save</mat-icon>
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

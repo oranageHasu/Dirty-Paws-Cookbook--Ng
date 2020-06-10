@@ -1,3 +1,4 @@
+// Button
 .button {
   background-color: $primary-app-color;
   color: $text-white;
@@ -24,21 +25,32 @@
   color: white;
 }
 
-.icon-button {
-  @extend .button;
-  text-align: center;
-  padding: 12px;
-  min-width: 42px;
-  width: 42px;
-  height: 42px;
-  float: right;
+
+
+// Icon Button (Large)
+$icon-large-container-size: 40px;
+$icon-large-size: 40px;
+
+.mat-icon-button.large {
+  width: $icon-large-container-size;
+  height: $icon-large-container-size;
+  line-height: $icon-large-container-size;
+
+  .mat-icon, .mat-icon-button i {
+    line-height: $icon-large-size;
+  }
+
+  .mat-icon {
+    width: $icon-large-size;
+    height: $icon-large-size;
+  }
+
+  .material-icons {
+    font-size: $icon-large-size;
+  }
+
 }
 
-.icon-dropdown-button {
-  @extend .button;
-  text-align: center;
-  padding: 12px;
-  width: 70px;
-  float: right;
+mat-icon:hover {
+  color: $hover;
 }
-
